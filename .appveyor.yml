@@ -12,6 +12,7 @@ init:
 install:
   # Install repo specific stuff here
 before_build:
+  - ps: choco install dotnetcore-sdk --no-progress --confirm --version 2.1.300-preview2-008533
   - cmd: dotnet --version
   - cmd: dotnet restore ./Centare.Extensions/Centare.Extensions.csproj --verbosity m
 build_script:
